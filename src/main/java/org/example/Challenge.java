@@ -6,6 +6,7 @@ public class Challenge extends PApplet {
 
     public static final int WIDTH = 500;
     public static final int HEIGHT = 500;
+    public static final int heightOfTheBall = HEIGHT / 5;
     public static final int DIAMETER = 25;
     public int speedOfBallOne= 1;
     public int speedOfBallTwo= 1;
@@ -31,14 +32,13 @@ public class Challenge extends PApplet {
 
     @Override
     public void draw() {
-
-        drawMoveableBall(speedOfBallOne+=1,HEIGHT/5);
-        drawMoveableBall(speedOfBallTwo+=2,(HEIGHT/5)*2);
-        drawMoveableBall(speedOfBallThree+=3,(HEIGHT/5)*3);
-        drawMoveableBall(speedOfBallFour+=4,(HEIGHT/5)*4);
+        drawMoveableBall(speedOfBallOne+=1, heightOfTheBall);
+        drawMoveableBall(speedOfBallTwo+=2,(heightOfTheBall)*2);
+        drawMoveableBall(speedOfBallThree+=3,(heightOfTheBall)*3);
+        drawMoveableBall(speedOfBallFour+=4,(heightOfTheBall)*4);
     }
 
-    private void drawMoveableBall(int speed,int heighOfTheBall) {
-        ellipse(speed, heighOfTheBall  , DIAMETER, DIAMETER);
+    private void drawMoveableBall(int speed,int height) {
+        ellipse(speed, height  , DIAMETER, DIAMETER);
     }
 }
